@@ -20,6 +20,7 @@
     "react-dom": "^19.0.0",
     "react-fontawesome": "^1.7.1",
     "react-tsparticles": "^2.12.2",
+    "swiper": "^11.2.5",
     "three": "^0.174.0",
     "tsparticles": "^3.8.1",
     "tsparticles-slim": "^2.12.0"
