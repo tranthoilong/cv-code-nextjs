@@ -199,15 +199,8 @@ export default function Home() {
           <ParticlesBackground />
         </div>
 
-        <Parallax ref={parallax} pages={6}>
-          {/* Hero Layer */}
-          <ParallaxLayer offset={0} speed={0}>
-            <div className="h-screen w-full">
-              <Scene scroll={scrollYProgress.get()} />
-            </div>
-          </ParallaxLayer>
-
-          {/* Thêm overlay gradient để particles không làm ảnh hưởng đến text */}
+        <Parallax ref={parallax} pages={7}>
+          {/* Gradient overlays */}
           <ParallaxLayer
             offset={1}
             speed={0.2}
@@ -229,6 +222,27 @@ export default function Home() {
               background: 'linear-gradient(to bottom, rgba(23, 42, 69, 0.8), rgba(23, 42, 69, 0.95))',
             }}
           />
+          <ParallaxLayer
+            offset={4}
+            speed={0.2}
+            style={{
+              background: 'linear-gradient(to bottom, rgba(29, 48, 74, 0.8), rgba(29, 48, 74, 0.95))',
+            }}
+          />
+          <ParallaxLayer
+            offset={5}
+            speed={0.2}
+            style={{
+              background: 'linear-gradient(to bottom, rgba(35, 54, 79, 0.8), rgba(35, 54, 79, 0.95))',
+            }}
+          />
+
+          {/* Hero Layer */}
+          <ParallaxLayer offset={0} speed={0}>
+            <div className="h-screen w-full">
+              <Scene scroll={scrollYProgress.get()} />
+            </div>
+          </ParallaxLayer>
 
           {/* Hero Content */}
           <ParallaxLayer
@@ -300,158 +314,6 @@ export default function Home() {
                 <p className="text-xl leading-relaxed">
                   When I'm not coding, you can find me exploring new technologies, reading tech blogs, or working on personal projects that challenge my skills and creativity. I believe in continuous learning and am always excited to take on new challenges that push my boundaries as a developer.
                 </p>
-              </div>
-            </motion.div>
-          </ParallaxLayer>
-
-          {/* Education Section */}
-          <ParallaxLayer
-            offset={1.5}
-            speed={0.3}
-            style={{
-              backgroundColor: '#0A192F',
-            }}
-          >
-            <motion.div 
-              className="flex items-center justify-center h-full"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <div className="max-w-4xl p-8 text-white">
-                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Education</h2>
-                <div className="space-y-8">
-                  {[
-                    {
-                      degree: "Bachelor of Computer Science",
-                      school: "University Name",
-                      year: "2019 - 2023",
-                      description: "Specialized in Software Engineering with focus on Web Development and Distributed Systems.",
-                      achievements: [
-                        "GPA: 3.8/4.0",
-                        "President of Computer Science Club",
-                        "Best Graduation Project Award"
-                      ]
-                    },
-                    {
-                      degree: "Full Stack Web Development",
-                      school: "Online Certification",
-                      year: "2022",
-                      description: "Comprehensive training in modern web development technologies.",
-                      achievements: [
-                        "React.js & Node.js Specialization",
-                        "Advanced Database Management",
-                        "Cloud Computing Fundamentals"
-                      ]
-                    }
-                  ].map((edu, index) => (
-                    <motion.div
-                      key={index}
-                      initial={{ opacity: 0, x: -50 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ delay: index * 0.2 }}
-                      className="bg-[#112240] p-6 rounded-xl border border-[#64FFDA]/20"
-                    >
-                      <div className="flex justify-between items-start mb-4">
-                        <div>
-                          <h3 className="text-2xl font-bold text-[#64FFDA]">{edu.degree}</h3>
-                          <p className="text-[#8892B0]">{edu.school}</p>
-                        </div>
-                        <span className="text-[#64FFDA] bg-[#64FFDA]/10 px-3 py-1 rounded-full text-sm">
-                          {edu.year}
-                        </span>
-                      </div>
-                      <p className="text-[#CCD6F6] mb-4">{edu.description}</p>
-                      <ul className="space-y-2">
-                        {edu.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-center text-[#8892B0]">
-                            <span className="text-[#64FFDA] mr-3">▹</span>
-                            {achievement}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  ))}
-                </div>
-              </div>
-            </motion.div>
-          </ParallaxLayer>
-
-          {/* Personal Interests Section */}
-          <ParallaxLayer
-            offset={1.8}
-            speed={0.4}
-            style={{
-              backgroundColor: '#112240',
-            }}
-          >
-            <motion.div 
-              className="flex items-center justify-center h-full"
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              transition={{ duration: 1 }}
-            >
-              <div className="max-w-6xl p-8 text-white">
-                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Personal Interests</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                  {[
-                    {
-                      category: "Technology",
-                      icon: "💻",
-                      interests: [
-                        "Open Source Contributing",
-                        "AI & Machine Learning",
-                        "New Programming Languages",
-                        "Tech Blogging"
-                      ]
-                    },
-                    {
-                      category: "Lifestyle",
-                      icon: "🌟",
-                      interests: [
-                        "Photography",
-                        "Traveling",
-                        "Fitness & Health",
-                        "Reading Tech Books"
-                      ]
-                    },
-                    {
-                      category: "Creative",
-                      icon: "🎨",
-                      interests: [
-                        "UI/UX Design",
-                        "Digital Art",
-                        "Music Production",
-                        "Video Editing"
-                      ]
-                    }
-                  ].map((section, index) => (
-                    <motion.div
-                      key={section.category}
-                      whileHover={{ 
-                        scale: 1.05,
-                        boxShadow: "0 0 20px rgba(100, 255, 218, 0.2)"
-                      }}
-                      initial={{ opacity: 0, y: 20 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ delay: index * 0.2 }}
-                      className="bg-[#0A192F] p-6 rounded-xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40"
-                    >
-                      <div className="flex items-center mb-6">
-                        <span className="text-4xl mr-4">{section.icon}</span>
-                        <h3 className="text-2xl font-bold text-[#64FFDA]">{section.category}</h3>
-                      </div>
-                      <ul className="space-y-3">
-                        {section.interests.map((interest, i) => (
-                          <li key={i} className="flex items-center text-[#8892B0]">
-                            <span className="text-[#64FFDA] mr-3">▹</span>
-                            {interest}
-                          </li>
-                        ))}
-                      </ul>
-                    </motion.div>
-                  ))}
-                </div>
               </div>
             </motion.div>
           </ParallaxLayer>
@@ -537,12 +399,164 @@ export default function Home() {
             </motion.div>
           </ParallaxLayer>
 
-          {/* Projects Section */}
+          {/* Education Section */}
           <ParallaxLayer
             offset={3}
+            speed={0.3}
+            style={{
+              backgroundColor: '#112240',
+            }}
+          >
+            <motion.div 
+              className="flex items-center justify-center h-full"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <div className="max-w-4xl p-8 text-white">
+                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Education</h2>
+                <div className="space-y-8">
+                  {[
+                    {
+                      degree: "Bachelor of Computer Science",
+                      school: "University Name",
+                      year: "2019 - 2023",
+                      description: "Specialized in Software Engineering with focus on Web Development and Distributed Systems.",
+                      achievements: [
+                        "GPA: 3.8/4.0",
+                        "President of Computer Science Club",
+                        "Best Graduation Project Award"
+                      ]
+                    },
+                    {
+                      degree: "Full Stack Web Development",
+                      school: "Online Certification",
+                      year: "2022",
+                      description: "Comprehensive training in modern web development technologies.",
+                      achievements: [
+                        "React.js & Node.js Specialization",
+                        "Advanced Database Management",
+                        "Cloud Computing Fundamentals"
+                      ]
+                    }
+                  ].map((edu, index) => (
+                    <motion.div
+                      key={index}
+                      initial={{ opacity: 0, x: -50 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: index * 0.2 }}
+                      className="bg-[#112240] p-6 rounded-xl border border-[#64FFDA]/20"
+                    >
+                      <div className="flex justify-between items-start mb-4">
+                        <div>
+                          <h3 className="text-2xl font-bold text-[#64FFDA]">{edu.degree}</h3>
+                          <p className="text-[#8892B0]">{edu.school}</p>
+                        </div>
+                        <span className="text-[#64FFDA] bg-[#64FFDA]/10 px-3 py-1 rounded-full text-sm">
+                          {edu.year}
+                        </span>
+                      </div>
+                      <p className="text-[#CCD6F6] mb-4">{edu.description}</p>
+                      <ul className="space-y-2">
+                        {edu.achievements.map((achievement, i) => (
+                          <li key={i} className="flex items-center text-[#8892B0]">
+                            <span className="text-[#64FFDA] mr-3">▹</span>
+                            {achievement}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </ParallaxLayer>
+
+          {/* Personal Interests Section */}
+          <ParallaxLayer
+            offset={4}
+            speed={0.4}
+            style={{
+              backgroundColor: '#0A192F',
+            }}
+          >
+            <motion.div 
+              className="flex items-center justify-center h-full"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
+              <div className="max-w-6xl p-8 text-white">
+                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Personal Interests</h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {[
+                    {
+                      category: "Technology",
+                      icon: "💻",
+                      interests: [
+                        "Open Source Contributing",
+                        "AI & Machine Learning",
+                        "New Programming Languages",
+                        "Tech Blogging"
+                      ]
+                    },
+                    {
+                      category: "Lifestyle",
+                      icon: "🌟",
+                      interests: [
+                        "Photography",
+                        "Traveling",
+                        "Fitness & Health",
+                        "Reading Tech Books"
+                      ]
+                    },
+                    {
+                      category: "Creative",
+                      icon: "🎨",
+                      interests: [
+                        "UI/UX Design",
+                        "Digital Art",
+                        "Music Production",
+                        "Video Editing"
+                      ]
+                    }
+                  ].map((section, index) => (
+                    <motion.div
+                      key={section.category}
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: "0 0 20px rgba(100, 255, 218, 0.2)"
+                      }}
+                      initial={{ opacity: 0, y: 20 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ delay: index * 0.2 }}
+                      className="bg-[#0A192F] p-6 rounded-xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40"
+                    >
+                      <div className="flex items-center mb-6">
+                        <span className="text-4xl mr-4">{section.icon}</span>
+                        <h3 className="text-2xl font-bold text-[#64FFDA]">{section.category}</h3>
+                      </div>
+                      <ul className="space-y-3">
+                        {section.interests.map((interest, i) => (
+                          <li key={i} className="flex items-center text-[#8892B0]">
+                            <span className="text-[#64FFDA] mr-3">▹</span>
+                            {interest}
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            </motion.div>
+          </ParallaxLayer>
+
+          {/* Projects Section */}
+          <ParallaxLayer
+            offset={5}
             speed={0.8}
             style={{
-              backgroundColor: '#1D3557',
+              backgroundColor: '#112240',
             }}
           >
             <motion.div 
@@ -626,7 +640,7 @@ export default function Home() {
 
           {/* Contact Form */}
           <ParallaxLayer
-            offset={4}
+            offset={6}
             speed={0.2}
             style={{
               backgroundColor: '#0A192F',
