@@ -34,9 +34,9 @@ const projects: Project[] = [
   },
   {
     url: "https://github.com/tranthoilong/cv-code-nextjs",
-    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    liveUrl: "https://cv-code-nextjs.vercel.app/",
     title: "Portfolio",
-    description: "A modern portfolio website built with Next.js, featuring smooth parallax scrolling, interactive particle effects, and responsive design. Showcases my professional journey, skills, and projects with elegant animations and a user-friendly interface.",
+    description: "A modern portfolio website built with Next.js, TypeScript, TailwindCSS, React Three Fiber, Framer Motion, React Spring Parallax, and React Particles. Implements smooth scrolling animations, 3D graphics, interactive particle effects, and a fully responsive design optimized for all devices.",
     thumbnail: "/projects/cv-project.png"
   }
 ];
