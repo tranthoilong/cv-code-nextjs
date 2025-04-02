@@ -316,7 +316,7 @@ export default function Home() {
                 className="w-48 h-48 mb-8 rounded-full overflow-hidden border-4 border-[#64FFDA]"
               >
                 <Image
-                  src="/avatar.jpg" 
+                  src="/avatar.JPG" 
                   alt="Trần Thới Long"
                   width={192}
                   height={192}
