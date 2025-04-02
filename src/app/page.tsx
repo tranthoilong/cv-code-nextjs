@@ -18,6 +18,7 @@ import { toast } from 'sonner'
 
 interface Project {
   url: string;
+  liveUrl: string;
   title: string;
   description: string;
   thumbnail: string;
@@ -25,19 +26,22 @@ interface Project {
 
 const projects: Project[] = [
   {
-    url: "https://project1.com",
-    title: "Project 1",
-    description: "Description of project 1 goes here...",
+    url: "https://github.com/tranthoilong/game-mouse-online",
+    liveUrl: "https://game-mouse-online.vercel.app/",
+    title: "Source Game Mouse Online",
+    description: "A multiplayer clicking game where two players can create and join game rooms to compete against each other. Players earn points by clicking on their screen, making it an engaging and competitive experience.",
     thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
   },
   {
     url: "https://project2.com",
+    liveUrl:"",
     title: "Project 2",
     description: "Description of project 2 goes here...",
     thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
   },
   {
     url: "https://project3.com",
+    liveUrl:"",
     title: "Project 3",
     description: "Description of project 3 goes here...",
     thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
@@ -45,6 +49,7 @@ const projects: Project[] = [
   ,
   {
     url: "https://project3.com",
+    liveUrl:"",
     title: "Project 3",
     description: "Description of project 3 goes here...",
     thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
@@ -52,6 +57,7 @@ const projects: Project[] = [
   ,
   {
     url: "https://project3.com",
+    liveUrl:"",
     title: "Project 3",
     description: "Description of project 3 goes here...",
     thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
@@ -639,31 +645,42 @@ export default function Home() {
                     <SwiperSlide key={index}>
                       <motion.div
                         whileHover={{ scale: 1.03 }}
-                        className="bg-[#112240] rounded-xl overflow-hidden h-full"
+                        className="bg-[#112240] rounded-xl overflow-hidden h-full relative group"
                       >
                         <div className="relative w-full h-48 overflow-hidden">
                           <img 
                             src={project.thumbnail} 
                             alt={project.title}
-                            className="object-cover w-full h-full transition-transform duration-300 hover:scale-110"
+                            className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
+                        
+                        {/* Preview Content */}
                         <div className="p-6">
                           <h3 className="text-2xl font-bold mb-4 text-[#64FFDA]">{project.title}</h3>
-                          <p className="mb-6 text-[#CCD6F6] line-clamp-3">{project.description}</p>
-                          <div className="flex gap-4">
+                          <p className="mb-6 text-[#CCD6F6] line-clamp-2">{project.description}</p>
+                        </div>
+
+                        {/* Hover Content */}
+                        <div className="absolute inset-0 bg-[#112240]/95 flex flex-col justify-center p-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                          <h3 className="text-2xl font-bold mb-4 text-[#64FFDA]">{project.title}</h3>
+                          <p className="mb-6 text-[#CCD6F6]">{project.description}</p>
+                          
+                          <div className="mt-auto flex gap-4">
+                            {project.liveUrl && (
+                              <motion.a
+                                href={project.liveUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-4 py-2 bg-[#64FFDA] text-[#0A192F] rounded-full text-sm font-medium hover:bg-[#45E6C6] transition-colors"
+                              >
+                                View Live
+                              </motion.a>
+                            )}
                             <motion.a
-                              href={project.url}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="px-4 py-2 bg-[#64FFDA] text-[#0A192F] rounded-full text-sm font-medium hover:bg-[#45E6C6] transition-colors"
-                            >
-                              View Live
-                            </motion.a>
-                            <motion.a
-                              href={`${project.url}/source`}
+                              href={`${project.url}`}
                               target="_blank"
                               rel="noopener noreferrer"
                               whileHover={{ scale: 1.05 }}
