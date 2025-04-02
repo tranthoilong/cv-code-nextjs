@@ -16,7 +16,6 @@ import 'swiper/css/pagination';
 import Image from 'next/image'
 import { toast } from 'sonner'
 
-// Thêm interface cho Project
 interface Project {
   url: string;
   title: string;
@@ -24,7 +23,6 @@ interface Project {
   thumbnail: string;
 }
 
-// Thêm dữ liệu projects
 const projects: Project[] = [
   {
     url: "https://project1.com",
@@ -60,7 +58,6 @@ const projects: Project[] = [
   }
 ];
 
-// Thêm component ParticlesBackground
 function ParticlesBackground() {
   const particlesInit = useCallback(async (engine: Engine) => {
     await loadSlim(engine);
