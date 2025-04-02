@@ -206,7 +206,6 @@ export default function Home() {
       } else {
         toast.error('Failed to send email')
       }
-      toast.success('Email sent successfully')
     }catch (error) {
       console.error('Error sending email:', error)
       toast.error('Failed to send email')
