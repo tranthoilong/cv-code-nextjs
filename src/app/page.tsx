@@ -2,15 +2,15 @@
 import { Canvas } from '@react-three/fiber'
 import { OrbitControls, Sphere, Stars } from '@react-three/drei'
 import { Suspense, useRef, useCallback } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll } from 'framer-motion'
 import { Parallax, ParallaxLayer, IParallax } from '@react-spring/parallax'
 import Particles from "react-tsparticles"
-import { loadSlim } from "tsparticles-slim"
-import type { Container, Engine } from "tsparticles-engine"
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import { loadSlim } from "tsparticles-slim" 
+import type { Engine } from "tsparticles-engine"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+import 'swiper/css'
+import 'swiper/css/navigation'
 import 'swiper/css/pagination';
 
 import Image from 'next/image'
@@ -31,6 +31,41 @@ const projects: Project[] = [
     title: "Source Game Mouse Online",
     description: "A multiplayer clicking game where two players can create and join game rooms to compete against each other. Players earn points by clicking on their screen, making it an engaging and competitive experience.",
     thumbnail: "/projects/mouse-project.png"
+  },
+  {
+    url: "https://github.com/tranthoilong/cv-code-nextjs",
+    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    title: "CV Code NextJS",
+    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    thumbnail: "/projects/cv-project.png"
+  },
+  {
+    url: "https://github.com/tranthoilong/cv-code-nextjs",
+    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    title: "CV Code NextJS",
+    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    thumbnail: "/projects/cv-project.png"
+  },
+  {
+    url: "https://github.com/tranthoilong/cv-code-nextjs",
+    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    title: "CV Code NextJS",
+    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    thumbnail: "/projects/cv-project.png"
+  },
+  {
+    url: "https://github.com/tranthoilong/cv-code-nextjs",
+    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    title: "CV Code NextJS",
+    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    thumbnail: "/projects/cv-project.png"
+  },
+  {
+    url: "https://github.com/tranthoilong/cv-code-nextjs",
+    liveUrl: "https://cv-code-nextjs.l-code.top/",
+    title: "CV Code NextJS",
+    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    thumbnail: "/projects/cv-project.png"
   }
 ];
 
@@ -123,7 +158,7 @@ function Scene({ scroll }: { scroll: number }) {
         <OrbitControls enableZoom={false} />
         <Stars radius={300} depth={60} count={20000} factor={7} saturation={0} />
         
-        <motion.mesh rotation-y={scroll * 0.5}>
+        <mesh rotation-y={scroll * 0.5}>
           <Sphere args={[1, 64, 64]}>
             <meshStandardMaterial 
               color="#1E2A38"
@@ -132,7 +167,7 @@ function Scene({ scroll }: { scroll: number }) {
               transparent
             />
           </Sphere>
-        </motion.mesh>
+        </mesh>
 
         <ambientLight intensity={0.5} />
         <directionalLight position={[10, 10, 5]} intensity={1} />
@@ -157,9 +192,6 @@ const PersonSchema = {
 export default function Home() {
   const parallax = useRef<IParallax>(null)
   const { scrollYProgress } = useScroll()
-  
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5])
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -618,9 +650,11 @@ export default function Home() {
                         className="bg-[#112240] rounded-xl overflow-hidden h-full relative group"
                       >
                         <div className="relative w-full h-48 overflow-hidden">
-                          <img 
+                          <Image 
                             src={project.thumbnail} 
                             alt={project.title}
+                            width={400}
+                            height={300}
                             className="object-cover w-full h-full transition-transform duration-300 group-hover:scale-110"
                           />
                         </div>
