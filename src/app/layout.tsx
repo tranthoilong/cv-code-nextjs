@@ -20,11 +20,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Trần Thới Long - Fullstack Developer",
     description: "Professional portfolio showcasing fullstack development projects and expertise",
-    url: "https://your-domain.com",
+    url: "https://cv-code-nextjs.vercel.app/",
     siteName: "Trần Thới Long Portfolio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/avatar.png",
         width: 1200,
         height: 630,
         alt: "Trần Thới Long - Fullstack Developer",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Trần Thới Long - Fullstack Developer",
     description: "Professional portfolio showcasing fullstack development projects and expertise",
-    images: ["/og-image.jpg"],
+    images: ["/avatar.png"],
   },
   robots: {
     index: true,
