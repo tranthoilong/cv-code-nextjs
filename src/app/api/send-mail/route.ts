@@ -83,7 +83,7 @@ export async function POST(req: Request) {
     };
 
     const confirmationMailOptions = {
-      from: process.env.NEXT_PUBLIC_MAIL_FROM,
+      from: `"Trần Thới Long" <${process.env.NEXT_PUBLIC_MAIL_FROM}>`,
       to: email,
       subject: 'Thank you for your message',
       text: `
@@ -148,6 +148,13 @@ export async function POST(req: Request) {
           </body>
         </html>
       `,
+      headers: {
+        'X-No-Relay': 'true',
+        'X-Priority': '1',
+        'X-MSMail-Priority': 'High',
+        'Importance': 'high',
+        'From': `"Trần Thới Long" <${process.env.NEXT_PUBLIC_MAIL_FROM}>`
+      }
     };
 
     await transporter.sendMail(confirmationMailOptions);
