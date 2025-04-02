@@ -97,7 +97,7 @@ function ParticlesBackground() {
         },
         particles: {
           color: {
-            value: "#A9A9A9", // Màu xám sáng hiện đại
+            value: "#A9A9A9", 
           },
           links: {
             color: "#A9A9A9",
@@ -150,7 +150,7 @@ function Scene({ scroll }: { scroll: number }) {
         <motion.mesh rotation-y={scroll * 0.5}>
           <Sphere args={[1, 64, 64]}>
             <meshStandardMaterial 
-              color="#1E2A38" // Xanh dương đậm hiện đại
+              color="#1E2A38"
               wireframe
               opacity={0.8}
               transparent
@@ -165,7 +165,6 @@ function Scene({ scroll }: { scroll: number }) {
   )
 }
 
-// Thêm component cho structured data
 const PersonSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -193,10 +192,8 @@ export default function Home() {
     const email = formData.get('email') 
     const message = formData.get('message')
 
-    // Get the submit button
     const submitButton = (e.target as HTMLFormElement).querySelector('button[type="submit"]') as HTMLButtonElement
     
-    // Disable button and show loading state
     if (submitButton) {
       submitButton.disabled = true
       submitButton.innerHTML = `
@@ -216,7 +213,6 @@ export default function Home() {
 
       if (response.ok) {
         toast.success('Email sent successfully')
-        // Clear form data
         const form = e.target as HTMLFormElement
         form.reset()
       } else {
@@ -226,7 +222,6 @@ export default function Home() {
       console.error('Error sending email:', error)
       toast.error('Failed to send email')
     } finally {
-      // Reset button state
       if (submitButton) {
         submitButton.disabled = false
         submitButton.innerHTML = 'Send Message'
