@@ -1,37 +1,74 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Trang Web Portfolio
 
-## Getting Started
+Một trang web portfolio hiện đại được xây dựng với các công nghệ web tiên tiến.
 
-First, run the development server:
+## Công Nghệ Sử Dụng
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Framework Frontend
+- **Next.js 14** - Framework React với khả năng render phía server và tạo trang tĩnh
+- **React 18** - Thư viện JavaScript để xây dựng giao diện người dùng
+- **TypeScript** - Ngôn ngữ mở rộng của JavaScript với kiểu dữ liệu
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Giao Diện & UI
+- **TailwindCSS** - Framework CSS tiện ích
+- **Shadcn/ui** - Thư viện components dựa trên Radix UI và Tailwind
+- **Framer Motion** - Thư viện animation cho React
+- **React Spring Parallax** - Hiệu ứng cuộn parallax
+- **React Three Fiber** - Renderer React cho Three.js
+- **React Particles** - Hiệu ứng hạt động
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Xử Lý Form & Thông Báo
+- **React Hook Form** - Xác thực và xử lý form
+- **Sonner** - Thông báo toast
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### SEO & Tối Ưu
+- **Next SEO** - Quản lý SEO với Next.js
+- **Schema.org** - Cấu trúc dữ liệu cho máy tìm kiếm
+- **Open Graph** - Metadata cho mạng xã hội
+- **Sitemap** - Bản đồ trang web tự động
+- **Robots.txt** - Kiểm soát truy cập bot
 
-## Learn More
+### Công Cụ Phát Triển
+- **ESLint** - Công cụ kiểm tra mã JavaScript
+- **Prettier** - Công cụ định dạng mã
+- **Git** - Quản lý phiên bản
+- **npm** - Quản lý gói
 
-To learn more about Next.js, take a look at the following resources:
+## Tính Năng
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Thiết kế responsive tối ưu cho mọi thiết bị
+- Đồ họa 3D tương tác với Three.js
+- Hiệu ứng cuộn mượt mà
+- Hiệu ứng hạt động
+- Form liên hệ tích hợp email
+- Tối ưu SEO với metadata
+- Phát triển an toàn với TypeScript
+- Các component UI hiện đại với TailwindCSS và Shadcn
+- Thông báo toast cho phản hồi form
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Cấu Trúc Dự Án
 
-## Deploy on Vercel
+Dự án tuân theo kiến trúc rõ ràng với:
+- `src/app` - Các trang router của Next.js
+- `src/components` - Các component React có thể tái sử dụng
+- `src/lib` - Các hàm tiện ích và cấu hình
+- `public` - Tài nguyên tĩnh và hình ảnh
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Hiệu Suất
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-# cv-code-nextjs
+Trang web được tối ưu hiệu suất với:
+- Render phía server
+- Tối ưu hóa hình ảnh
+- Chia tách mã
+- Tải trễ
+- Build sản phẩm đã được thu nhỏ
+- Điểm Lighthouse cao
+
+## Triển Khai
+
+Trang web được triển khai trên Vercel với:
+- Triển khai tự động
+- Mạng CDN Edge
+- Bật SSL/HTTPS
+- Phân tích và giám sát
+- Tối ưu SEO tự động
