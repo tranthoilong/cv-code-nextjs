@@ -150,14 +150,14 @@ function Scene({ scroll }: { scroll: number }) {
 
 const PersonSchema = {
   "@context": "https://schema.org",
-  "@type": "Person",
+  "@type": "Person", 
   "name": "Trần Thới Long",
   "jobTitle": "Developer",
-  "url": "https://your-domain.com",
+  "url": "https://cv-code-nextjs.vercel.app/",
   "sameAs": [
-    "https://github.com/your-username",
-    "https://linkedin.com/in/your-username",
-    "https://twitter.com/your-username"
+    "https://github.com/tranthoilong",
+    "https://linkedin.com/in/tranthoilong",
+    "https://twitter.com/tranthoilong"
   ]
 }
 
@@ -285,7 +285,7 @@ export default function Home() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ delay: 0.2 }}
-                className="w-48 h-48 mb-8 rounded-full overflow-hidden border-4 border-[#64FFDA]"
+                className="w-32 h-32 md:w-48 md:h-48 mb-4 md:mb-8 rounded-full overflow-hidden border-4 border-[#64FFDA]"
               >
                 <Image
                   src="/avatar.png" 
@@ -295,12 +295,12 @@ export default function Home() {
                   className="w-full h-full object-cover"
                 />
               </motion.div>
-              <h1 className="text-6xl font-bold mb-4 text-[#64FFDA]">Trần Thới Long</h1>
-              <h2 className="text-2xl mb-8 text-[#CCD6F6]">Developer</h2>
+              <h1 className="text-4xl md:text-6xl font-bold mb-2 md:mb-4 text-[#64FFDA]">Trần Thới Long</h1>
+              <h2 className="text-xl md:text-2xl mb-4 md:mb-8 text-[#CCD6F6]">Developer</h2>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
-                className="px-8 py-3 bg-[#64FFDA] text-[#0A192F] rounded-full text-lg hover:bg-[#45E6C6]"
+                className="px-6 md:px-8 py-2 md:py-3 bg-[#64FFDA] text-[#0A192F] rounded-full text-base md:text-lg hover:bg-[#45E6C6]"
                 onClick={() => parallax.current?.scrollTo(1)}
               >
                 Discover More
@@ -322,15 +322,15 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <div className="max-w-4xl p-8 text-white">
-                <h2 className="text-5xl font-bold mb-8 text-[#F39C12]">About Me</h2>
-                <p className="text-xl leading-relaxed mb-6">
+              <div className="max-w-4xl p-4 md:p-8 text-white">
+                <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-8 text-[#F39C12]">About Me</h2>
+                <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-6">
                   I am a programmer with over a year of experience. I graduated in 2023 and started working at Mpire Agency in July 2023 as a Fresher. After a period of working, I was officially hired as a full-time employee at the company at the end of 2023.
                 </p>
-                <p className="text-xl leading-relaxed mb-6">
+                <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-6">
                   During my time at Mpire Agency, I gained valuable experience and became familiar with various software development tools. I had the opportunity to work with languages and frameworks such as Phalcon (PHP), Flutter (Dart), JavaScript, React, and other technologies. Additionally, I have worked on a few small projects using Next.js.
                 </p>
-                <p className="text-xl leading-relaxed">
+                <p className="text-base md:text-xl leading-relaxed">
                   Furthermore, I also have experience with Docker to create and manage development environments, as well as deploy applications. I have set up CI/CD pipelines to automate the build, testing, and deployment processes for applications in production. Deploying websites has also been a part of my role, ensuring that applications run smoothly and efficiently after deployment.
                 </p>
               </div>
@@ -351,11 +351,11 @@ export default function Home() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <div className="max-w-6xl p-8 text-white">
-                <h2 className="text-6xl font-bold mb-16 text-center text-[#64FFDA] tracking-tight">
+              <div className="max-w-6xl p-4 md:p-8 text-white">
+                <h2 className="text-4xl md:text-6xl font-bold mb-8 md:mb-16 text-center text-[#64FFDA] tracking-tight">
                   Skills & Expertise
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
                   {[
                     {
                       category: 'Frontend',
@@ -395,13 +395,13 @@ export default function Home() {
                         scale: 1.05,
                         boxShadow: "0 0 20px rgba(100, 255, 218, 0.2)"
                       }}
-                      className="p-8 bg-[#112240] rounded-2xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40 transition-all duration-300"
+                      className="p-6 md:p-8 bg-[#112240] rounded-2xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40 transition-all duration-300"
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
                     >
-                      <h3 className="text-3xl font-bold mb-6 text-[#64FFDA]">{category}</h3>
-                      <ul className="space-y-4 text-lg text-[#8892B0]">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-[#64FFDA]">{category}</h3>
+                      <ul className="space-y-3 md:space-y-4 text-base md:text-lg text-[#8892B0]">
                         {skills.map((skill, i) => (
                           <li key={i} className="flex items-center">
                             <span className="text-[#64FFDA] mr-3">▹</span>
@@ -430,9 +430,9 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <div className="max-w-4xl p-8 text-white">
-                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Education</h2>
-                <div className="space-y-8">
+              <div className="max-w-4xl p-4 md:p-8 text-white">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-12 text-center text-[#64FFDA]">Education</h2>
+                <div className="space-y-6 md:space-y-8">
                   {[
                     {
                       degree: "Bachelor of Applied Information Technology",
@@ -467,21 +467,21 @@ export default function Home() {
                       initial={{ opacity: 0, x: -50 }}
                       whileInView={{ opacity: 1, x: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className="bg-[#112240] p-6 rounded-xl border border-[#64FFDA]/20"
+                      className="bg-[#112240] p-4 md:p-6 rounded-xl border border-[#64FFDA]/20"
                     >
-                      <div className="flex justify-between items-start mb-4">
+                      <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-2 md:gap-4 mb-4">
                         <div>
-                          <h3 className="text-2xl font-bold text-[#64FFDA]">{edu.degree}</h3>
-                          <p className="text-[#8892B0]">{edu.school}</p>
+                          <h3 className="text-xl md:text-2xl font-bold text-[#64FFDA]">{edu.degree}</h3>
+                          <p className="text-sm md:text-base text-[#8892B0]">{edu.school}</p>
                         </div>
-                        <span className="text-[#64FFDA] bg-[#64FFDA]/10 px-3 py-1 rounded-full text-sm">
+                        <span className="text-[#64FFDA] bg-[#64FFDA]/10 px-3 py-1 rounded-full text-sm w-fit">
                           {edu.year}
                         </span>
                       </div>
-                      <p className="text-[#CCD6F6] mb-4">{edu.description}</p>
+                      <p className="text-sm md:text-base text-[#CCD6F6] mb-4">{edu.description}</p>
                       <ul className="space-y-2">
                         {edu.achievements.map((achievement, i) => (
-                          <li key={i} className="flex items-center text-[#8892B0]">
+                          <li key={i} className="flex items-center text-sm md:text-base text-[#8892B0]">
                             <span className="text-[#64FFDA] mr-3">▹</span>
                             {achievement}
                           </li>
@@ -508,9 +508,9 @@ export default function Home() {
               whileInView={{ opacity: 1 }}
               transition={{ duration: 1 }}
             >
-              <div className="max-w-6xl p-8 text-white">
-                <h2 className="text-5xl font-bold mb-12 text-center text-[#64FFDA]">Personal Interests</h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              <div className="max-w-6xl p-4 md:p-8 text-white">
+                <h2 className="text-3xl md:text-5xl font-bold mb-6 md:mb-12 text-center text-[#64FFDA]">Personal Interests</h2>
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
                   {[
                     {
                       category: "Technology",
@@ -554,15 +554,15 @@ export default function Home() {
                       initial={{ opacity: 0, y: 20 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ delay: index * 0.2 }}
-                      className="bg-[#0A192F] p-6 rounded-xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40"
+                      className="bg-[#0A192F] p-4 md:p-6 rounded-xl border border-[#64FFDA]/20 hover:border-[#64FFDA]/40"
                     >
-                      <div className="flex items-center mb-6">
-                        <span className="text-4xl mr-4">{section.icon}</span>
-                        <h3 className="text-2xl font-bold text-[#64FFDA]">{section.category}</h3>
+                      <div className="flex items-center mb-4 md:mb-6">
+                        <span className="text-3xl md:text-4xl mr-3 md:mr-4">{section.icon}</span>
+                        <h3 className="text-xl md:text-2xl font-bold text-[#64FFDA]">{section.category}</h3>
                       </div>
-                      <ul className="space-y-3">
+                      <ul className="space-y-2 md:space-y-3">
                         {section.interests.map((interest, i) => (
-                          <li key={i} className="flex items-center text-[#8892B0]">
+                          <li key={i} className="flex items-center text-sm md:text-base text-[#8892B0]">
                             <span className="text-[#64FFDA] mr-3">▹</span>
                             {interest}
                           </li>
@@ -691,25 +691,25 @@ export default function Home() {
               transition={{ duration: 1 }}
             >
               <div className="w-full max-w-7xl mx-auto px-4">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 mb-8 md:mb-12">
                   {/* Contact Form Section */}
-                  <div className="bg-[#112240] p-8 rounded-xl">
-                    <h2 className="text-4xl font-bold mb-6 text-[#64FFDA]">Get In Touch</h2>
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="bg-[#112240] p-4 md:p-8 rounded-xl">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-4 md:mb-6 text-[#64FFDA]">Get In Touch</h2>
+                    <form onSubmit={handleSubmit} className="space-y-4 md:space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
                         <input
                           type="text" 
                           name="name"
                           placeholder="Your Name"
                           required
-                          className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all"
+                          className="w-full p-3 md:p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all text-sm md:text-base"
                         />
                         <input
                           type="email"
                           name="email" 
                           placeholder="Your Email"
                           required
-                          className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all"
+                          className="w-full p-3 md:p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all text-sm md:text-base"
                         />
                       </div>
                       <textarea
@@ -717,11 +717,11 @@ export default function Home() {
                         rows={6}
                         placeholder="Your Message"
                         required
-                        className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all resize-none"
+                        className="w-full p-3 md:p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all resize-none text-sm md:text-base"
                       />
                       <button
                         type="submit"
-                        className="w-full md:w-auto px-8 py-4 bg-[#64FFDA] text-[#0A192F] rounded-lg font-bold text-lg hover:bg-[#45E6C6] active:transform active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl"
+                        className="w-full md:w-auto px-6 md:px-8 py-3 md:py-4 bg-[#64FFDA] text-[#0A192F] rounded-lg font-bold text-base md:text-lg hover:bg-[#45E6C6] active:transform active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl"
                       >
                         Send Message
                       </button>
@@ -729,12 +729,12 @@ export default function Home() {
                   </div>
 
                   {/* Contact Info Section */}
-                  <div className="space-y-8">
+                  <div className="space-y-6 md:space-y-8">
                     <div>
-                      <h3 className="text-2xl font-bold mb-4 text-[#64FFDA]">Contact Information</h3>
-                      <div className="space-y-3 text-[#CCD6F6]">
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#64FFDA]">Contact Information</h3>
+                      <div className="space-y-2 md:space-y-3 text-sm md:text-base text-[#CCD6F6]">
                         <p className="flex items-center group">
-                          <svg className="w-5 h-5 mr-3 group-hover:text-[#64FFDA] transition-colors" fill="currentColor" viewBox="0 0 20 20">
+                          <svg className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3 group-hover:text-[#64FFDA] transition-colors" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
                           </svg>
@@ -745,7 +745,7 @@ export default function Home() {
                         <div className="flex flex-col space-y-2">
                           <p className="flex items-center">
                             <a href="tel:0383892964" className="flex items-center hover:text-[#64FFDA] transition-colors">
-                              <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                               </svg>
                               0383892964
@@ -753,7 +753,7 @@ export default function Home() {
                           </p>
                           <p className="flex items-center">
                             <a href="tel:0388425022" className="flex items-center hover:text-[#64FFDA] transition-colors">
-                              <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                              <svg className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 20 20">
                                 <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                               </svg>
                               0388425022
@@ -762,36 +762,35 @@ export default function Home() {
                         </div>
                         <p className="flex items-center">
                           <a className="flex items-center hover:text-[#64FFDA] transition-colors" href="https://www.google.com/maps/place/36%2F9+Ch%E1%BB%AD+%C4%90%E1%BB%93ng+T%E1%BB%AD,+Ph%C6%B0%E1%BB%9Dng+7,+T%C3%A2n+B%C3%ACnh,+H%E1%BB%93+Ch%C3%AD+Minh/@10.7868127,106.6565106,17z/data=!4m6!3m5!1s0x31752f705cc427cf:0xbe31c51c658c3132!8m2!3d10.7868127!4d106.6565106!16s%2Fg%2F11w1wtzhhn?hl=vi-VN&entry=ttu&g_ep=EgoyMDI1MDMzMS4wIKXMDSoJLDEwMjExNjQwSAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">
-                            <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
+                            <svg className="w-4 h-4 md:w-5 md:h-5 mr-2 md:mr-3" fill="currentColor" viewBox="0 0 20 20">
                               <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                             </svg>36/9 Chữ Đồng Tử, Phường 7, Tân Bình, Hồ Chí Minh
                           </a>
                         </p>
-
                       </div>
                     </div>
 
                     {/* Social Links */}
                     <div>
-                      <h3 className="text-2xl font-bold mb-4 text-[#64FFDA]">Follow Me</h3>
+                      <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4 text-[#64FFDA]">Follow Me</h3>
                       <div className="flex space-x-4">
                         <a href="https://github.com/tranthoilong" target="_blank" rel="noopener noreferrer" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                           </svg>
                         </a>
                         <a href="https://www.linkedin.com/in/tranthoilong/" target="_blank" rel="noopener noreferrer" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                           </svg>
                         </a>
                         <a href="https://facebook.com/tranthoilong" target="_blank" rel="noopener noreferrer" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                           </svg>
                         </a>
                         <a href="#" target="_blank" rel="noopener noreferrer" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
-                          <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                          <svg className="w-5 h-5 md:w-6 md:h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z"/>
                           </svg>
                         </a>
@@ -801,7 +800,7 @@ export default function Home() {
                 </div>
 
                 {/* Footer Copyright */}
-                <div className="border-t border-[#233554] pt-8 text-center text-[#8892B0]">
+                <div className="border-t border-[#233554] pt-6 md:pt-8 text-center text-sm md:text-base text-[#8892B0]">
                   <p>© 2024 Trần Thới Long. All Rights Reserved.</p>
                 </div>
               </div>
