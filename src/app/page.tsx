@@ -27,40 +27,10 @@ interface Project {
 const projects: Project[] = [
   {
     url: "https://github.com/tranthoilong/game-mouse-online",
-    liveUrl: "https://game-mouse-online.vercel.app/",
+    liveUrl: "https://mouse-online.l-code.top/",
     title: "Source Game Mouse Online",
     description: "A multiplayer clicking game where two players can create and join game rooms to compete against each other. Players earn points by clicking on their screen, making it an engaging and competitive experience.",
-    thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
-  },
-  {
-    url: "https://project2.com",
-    liveUrl:"",
-    title: "Project 2",
-    description: "Description of project 2 goes here...",
-    thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
-  },
-  {
-    url: "https://project3.com",
-    liveUrl:"",
-    title: "Project 3",
-    description: "Description of project 3 goes here...",
-    thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
-  },
-  ,
-  {
-    url: "https://project3.com",
-    liveUrl:"",
-    title: "Project 3",
-    description: "Description of project 3 goes here...",
-    thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
-  },
-  ,
-  {
-    url: "https://project3.com",
-    liveUrl:"",
-    title: "Project 3",
-    description: "Description of project 3 goes here...",
-    thumbnail: "https://www.apexglobal.com.vn/wp-content/uploads/2016/08/it-project-manager.jpg"
+    thumbnail: "/projects/mouse-project.png"
   }
 ];
 
