@@ -12,7 +12,9 @@ import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
 import Image from 'next/image'
+import { toast } from 'sonner'
 
 // Thêm interface cho Project
 interface Project {
@@ -171,7 +173,7 @@ const PersonSchema = {
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Trần Thới Long",
-  "jobTitle": "Fullstack Developer",
+  "jobTitle": "Developer",
   "url": "https://your-domain.com",
   "sameAs": [
     "https://github.com/your-username",
@@ -186,6 +188,30 @@ export default function Home() {
   
   const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5])
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0])
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const formData = new FormData(e.target as HTMLFormElement)
+    const name = formData.get('name')
+    const email = formData.get('email')
+    const message = formData.get('message')
+    try {
+      const response = await fetch('/api/send-mail', {
+        method: 'POST',
+        body: JSON.stringify({ name, email, message }),
+      })
+
+      if (response.ok) {
+        toast.success('Email sent successfully')
+      } else {
+        toast.error('Failed to send email')
+      }
+      toast.success('Email sent successfully')
+    }catch (error) {
+      console.error('Error sending email:', error)
+      toast.error('Failed to send email')
+    }
+  }
 
   return (
     <>
@@ -274,7 +300,7 @@ export default function Home() {
                 />
               </motion.div>
               <h1 className="text-6xl font-bold mb-4 text-[#64FFDA]">Trần Thới Long</h1>
-              <h2 className="text-2xl mb-8 text-[#CCD6F6]">Fullstack Developer</h2>
+              <h2 className="text-2xl mb-8 text-[#CCD6F6]">Developer</h2>
               <motion.button
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
@@ -303,16 +329,13 @@ export default function Home() {
               <div className="max-w-4xl p-8 text-white">
                 <h2 className="text-5xl font-bold mb-8 text-[#F39C12]">About Me</h2>
                 <p className="text-xl leading-relaxed mb-6">
-                  I'm a passionate fullstack developer with over 3 years of experience in creating immersive web experiences. My journey in tech started when I built my first website in high school, and since then, I've been constantly learning and growing in this ever-evolving field.
+                  I am a programmer with over a year of experience. I graduated in 2023 and started working at Mpire Agency in July 2023 as a Fresher. After a period of working, I was officially hired as a full-time employee at the company at the end of 2023.
                 </p>
                 <p className="text-xl leading-relaxed mb-6">
-                  Currently, I specialize in building scalable web applications using modern technologies like React, Next.js, Node.js, and various cloud platforms. I have a strong foundation in both frontend and backend development, with particular expertise in creating responsive, user-friendly interfaces and implementing robust server-side solutions.
-                </p>
-                <p className="text-xl leading-relaxed mb-6">
-                  Beyond coding, I'm deeply interested in UI/UX design principles and always strive to create applications that not only function flawlessly but also provide an exceptional user experience. I'm also an active contributor to open-source projects and enjoy sharing my knowledge through technical blog posts and community forums.
+                  During my time at Mpire Agency, I gained valuable experience and became familiar with various software development tools. I had the opportunity to work with languages and frameworks such as Phalcon (PHP), Flutter (Dart), JavaScript, React, and other technologies. Additionally, I have worked on a few small projects using Next.js.
                 </p>
                 <p className="text-xl leading-relaxed">
-                  When I'm not coding, you can find me exploring new technologies, reading tech blogs, or working on personal projects that challenge my skills and creativity. I believe in continuous learning and am always excited to take on new challenges that push my boundaries as a developer.
+                  Furthermore, I also have experience with Docker to create and manage development environments, as well as deploy applications. I have set up CI/CD pipelines to automate the build, testing, and deployment processes for applications in production. Deploying websites has also been a part of my role, ensuring that applications run smoothly and efficiently after deployment.
                 </p>
               </div>
             </motion.div>
@@ -341,10 +364,9 @@ export default function Home() {
                     {
                       category: 'Frontend',
                       skills: [
-                        'React.js / Next.js',
+                        'Next.js',
                         'TypeScript / JavaScript',
-                        'TailwindCSS / SCSS',
-                        'Redux / Context API',
+                        'TailwindCSS',
                         'Flutter / Dart',
                         'HTML5 / CSS3'
                       ]
@@ -354,21 +376,20 @@ export default function Home() {
                       skills: [
                         'Node.js / Express',
                         'NestJS / TypeORM',
+                        'PHP / Phalcon',
                         'MongoDB / PostgreSQL',
                         'RESTful APIs / GraphQL',
-                        'Redis / Message Queues',
-                        'AWS / Google Cloud'
+                        'Redis',
                       ]
                     },
                     {
                       category: 'DevOps & Tools',
                       skills: [
-                        'Docker / Kubernetes',
-                        'CI/CD (Jenkins/GitLab)',
+                        'Docker',
+                        'CI/CD (Github/GitLab)',
                         'Git / GitHub Actions',
                         'Linux / Shell Scripting',
-                        'Nginx / Apache',
-                        'Monitoring & Logging'
+                        'Nginx'
                       ]
                     }
                   ].map(({category, skills}, index) => (
@@ -418,20 +439,19 @@ export default function Home() {
                 <div className="space-y-8">
                   {[
                     {
-                      degree: "Bachelor of Computer Science",
-                      school: "University Name",
-                      year: "2019 - 2023",
-                      description: "Specialized in Software Engineering with focus on Web Development and Distributed Systems.",
+                      degree: "Bachelor of Applied Information Technology",
+                      school: "Cao Thang Technical College (CKC)",
+                      year: "2020 - 2023",
+                      description: "Specialized in Software Engineering with focus on Web Development and Mobile App Development.",
                       achievements: [
-                        "GPA: 3.8/4.0",
-                        "President of Computer Science Club",
-                        "Best Graduation Project Award"
+                        "GPA: 7.02/10",
+                        "Excellent Team Leader"
                       ]
                     },
                     {
                       degree: "Full Stack Web Development",
                       school: "Online Certification",
-                      year: "2022",
+                      year: "2022-2023",
                       description: "Comprehensive training in modern web development technologies.",
                       achievements: [
                         "React.js & Node.js Specialization",
@@ -658,27 +678,33 @@ export default function Home() {
                   {/* Contact Form Section */}
                   <div className="bg-[#112240] p-8 rounded-xl">
                     <h2 className="text-4xl font-bold mb-6 text-[#64FFDA]">Get In Touch</h2>
-                    <form className="space-y-4">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <form onSubmit={handleSubmit} className="space-y-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input
-                          type="text"
-                          placeholder="Name"
-                          className="w-full p-3 bg-[#172A45] border border-[#64FFDA] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#64FFDA]"
+                          type="text" 
+                          name="name"
+                          placeholder="Your Name"
+                          required
+                          className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all"
                         />
                         <input
                           type="email"
-                          placeholder="Email"
-                          className="w-full p-3 bg-[#172A45] border border-[#64FFDA] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#64FFDA]"
+                          name="email" 
+                          placeholder="Your Email"
+                          required
+                          className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all"
                         />
                       </div>
                       <textarea
-                        rows={4}
-                        placeholder="Message"
-                        className="w-full p-3 bg-[#172A45] border border-[#64FFDA] rounded-md text-white focus:outline-none focus:ring-2 focus:ring-[#64FFDA]"
+                        name="message"
+                        rows={6}
+                        placeholder="Your Message"
+                        required
+                        className="w-full p-4 bg-[#172A45] border-2 border-[#64FFDA] rounded-lg text-white placeholder-[#8892B0] focus:outline-none focus:ring-2 focus:ring-[#64FFDA] focus:border-transparent transition-all resize-none"
                       />
                       <button
                         type="submit"
-                        className="px-8 py-3 bg-[#64FFDA] text-[#0A192F] rounded-md font-medium hover:bg-[#45E6C6] transition-colors"
+                        className="w-full md:w-auto px-8 py-4 bg-[#64FFDA] text-[#0A192F] rounded-lg font-bold text-lg hover:bg-[#45E6C6] active:transform active:scale-95 transition-all duration-200 shadow-lg hover:shadow-xl"
                       >
                         Send Message
                       </button>
@@ -701,7 +727,7 @@ export default function Home() {
                           <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                           </svg>
-                          0388425022
+                          0383892964 | 0388425022
                         </p>
                         <p className="flex items-center">
                           <svg className="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 20 20">
@@ -716,7 +742,7 @@ export default function Home() {
                     <div>
                       <h3 className="text-2xl font-bold mb-4 text-[#64FFDA]">Follow Me</h3>
                       <div className="flex space-x-4">
-                        <a href="#" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
+                        <a href="https://github.com/tranthoilong" className="text-[#CCD6F6] hover:text-[#64FFDA] transition-colors">
                           <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                             <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
                           </svg>
