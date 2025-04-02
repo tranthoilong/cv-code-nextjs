@@ -35,36 +35,8 @@ const projects: Project[] = [
   {
     url: "https://github.com/tranthoilong/cv-code-nextjs",
     liveUrl: "https://cv-code-nextjs.l-code.top/",
-    title: "CV Code NextJS",
-    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
-    thumbnail: "/projects/cv-project.png"
-  },
-  {
-    url: "https://github.com/tranthoilong/cv-code-nextjs",
-    liveUrl: "https://cv-code-nextjs.l-code.top/",
-    title: "CV Code NextJS",
-    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
-    thumbnail: "/projects/cv-project.png"
-  },
-  {
-    url: "https://github.com/tranthoilong/cv-code-nextjs",
-    liveUrl: "https://cv-code-nextjs.l-code.top/",
-    title: "CV Code NextJS",
-    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
-    thumbnail: "/projects/cv-project.png"
-  },
-  {
-    url: "https://github.com/tranthoilong/cv-code-nextjs",
-    liveUrl: "https://cv-code-nextjs.l-code.top/",
-    title: "CV Code NextJS",
-    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
-    thumbnail: "/projects/cv-project.png"
-  },
-  {
-    url: "https://github.com/tranthoilong/cv-code-nextjs",
-    liveUrl: "https://cv-code-nextjs.l-code.top/",
-    title: "CV Code NextJS",
-    description: "A simple CV website built with Next.js, Tailwind CSS, and TypeScript. It showcases my skills and experiences in a clean and professional manner.",
+    title: "Portfolio",
+    description: "A modern portfolio website built with Next.js, featuring smooth parallax scrolling, interactive particle effects, and responsive design. Showcases my professional journey, skills, and projects with elegant animations and a user-friendly interface.",
     thumbnail: "/projects/cv-project.png"
   }
 ];
@@ -316,7 +288,7 @@ export default function Home() {
                 className="w-48 h-48 mb-8 rounded-full overflow-hidden border-4 border-[#64FFDA]"
               >
                 <Image
-                  src="/avatar.JPG" 
+                  src="/avatar.png" 
                   alt="Trần Thới Long"
                   width={192}
                   height={192}
