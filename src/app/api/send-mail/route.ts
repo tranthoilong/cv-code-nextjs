@@ -14,7 +14,7 @@ export async function POST(req: Request) {
         pass: process.env.NEXT_PUBLIC_MAIL_PASSWORD,
       },
     });
-
+    
     const mailOptions = {
       from: process.env.NEXT_PUBLIC_MAIL_FROM,
       to: process.env.NEXT_PUBLIC_MAIL_USER,
