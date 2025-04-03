@@ -38,6 +38,13 @@ const projects: Project[] = [
     title: "Portfolio",
     description: "A modern portfolio website built with Next.js, TypeScript, TailwindCSS, React Three Fiber, Framer Motion, React Spring Parallax, and React Particles. Implements smooth scrolling animations, 3D graphics, interactive particle effects, and a fully responsive design optimized for all devices.",
     thumbnail: "/projects/cv-project.png"
+  },
+  {
+    url: "https://hub.docker.com/r/longdevlor/cdn",
+    liveUrl: "",
+    title: "CDN",
+    description: "A simple CDN service built with Node.js, Express, and Docker. It allows users to upload files and serve them to clients.",
+    thumbnail: "/projects/code.png"
   }
 ];
 
