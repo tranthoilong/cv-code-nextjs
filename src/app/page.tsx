@@ -22,6 +22,7 @@ interface Project {
   title: string;
   description: string;
   thumbnail: string;
+  isShowSource: boolean;
 }
 
 const projects: Project[] = [
@@ -30,21 +31,24 @@ const projects: Project[] = [
     liveUrl: "https://mouse-online.l-code.top/",
     title: "Source Game Mouse Online",
     description: "A multiplayer clicking game where two players can create and join game rooms to compete against each other. Players earn points by clicking on their screen, making it an engaging and competitive experience.",
-    thumbnail: "/projects/mouse-project.png"
+    thumbnail: "/projects/mouse-project.png",
+    isShowSource: false,
   },
   {
     url: "https://github.com/tranthoilong/cv-code-nextjs",
     liveUrl: "https://cv-code-nextjs.vercel.app/",
     title: "Portfolio",
     description: "A modern portfolio website built with Next.js, TypeScript, TailwindCSS, React Three Fiber, Framer Motion, React Spring Parallax, and React Particles. Implements smooth scrolling animations, 3D graphics, interactive particle effects, and a fully responsive design optimized for all devices.",
-    thumbnail: "/projects/cv-project.png"
+    thumbnail: "/projects/cv-project.png",
+    isShowSource: false,
   },
   {
     url: "https://hub.docker.com/r/longdevlor/cdn",
     liveUrl: "",
     title: "CDN",
     description: "A simple CDN service built with Node.js, Express, and Docker. It allows users to upload files and serve them to clients.",
-    thumbnail: "/projects/code.png"
+    thumbnail: "/projects/code.png",
+    isShowSource: true,
   }
 ];
 
@@ -662,16 +666,18 @@ export default function Home() {
                                 View Live
                               </motion.a>
                             )}
-                            <motion.a
-                              href={`${project.url}`}
-                              target="_blank"
-                              rel="noopener noreferrer"
-                              whileHover={{ scale: 1.05 }}
-                              whileTap={{ scale: 0.95 }}
-                              className="px-4 py-2 border border-[#64FFDA] text-[#64FFDA] rounded-full text-sm hover:bg-[#64FFDA]/10 transition-colors"
-                            >
-                              Source Code
-                            </motion.a>
+                            {project.isShowSource && (
+                              <motion.a
+                                href={`${project.url}`}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                whileHover={{ scale: 1.05 }}
+                                whileTap={{ scale: 0.95 }}
+                                className="px-4 py-2 border border-[#64FFDA] text-[#64FFDA] rounded-full text-sm hover:bg-[#64FFDA]/10 transition-colors"
+                              >
+                                Source Code
+                              </motion.a>
+                            )}
                           </div>
                         </div>
                       </motion.div>
