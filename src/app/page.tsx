@@ -336,10 +336,10 @@ export default function Home() {
               <div className="max-w-4xl p-4 md:p-8 text-white">
                 <h2 className="text-3xl md:text-5xl font-bold mb-4 md:mb-8 text-[#F39C12]">About Me</h2>
                 <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-6">
-                  I am a programmer with over a year of experience. I graduated in 2023 and started working at Mpire Agency in July 2023 as a Fresher. After a period of working, I was officially hired as a full-time employee at the company at the end of 2023.
+                  I am a programmer with over a year of experience. I graduated in 2023 and started working at <a href="https://thuvienphapluat.vn/ma-so-thue/cong-ty-tnhh-mpire-agency-mst-0315568678.html" target="_blank" rel="noopener noreferrer" className="text-[#64FFDA] hover:underline">Mpire Agency</a> in July 2023 as a Fresher. After a period of working, I was officially hired as a full-time employee at the company at the end of 2023.
                 </p>
                 <p className="text-base md:text-xl leading-relaxed mb-4 md:mb-6">
-                  During my time at Mpire Agency, I gained valuable experience and became familiar with various software development tools. I had the opportunity to work with languages and frameworks such as Phalcon (PHP), Flutter (Dart), JavaScript, React, and other technologies. Additionally, I have worked on a few small projects using Next.js.
+                  During my time at <a href="https://thuvienphapluat.vn/ma-so-thue/cong-ty-tnhh-mpire-agency-mst-0315568678.html" target="_blank" rel="noopener noreferrer" className="text-[#64FFDA] hover:underline">Mpire Agency</a>, I gained valuable experience and became familiar with various software development tools. I had the opportunity to work with languages and frameworks such as Phalcon (PHP), Flutter (Dart), JavaScript, React, and other technologies. Additionally, I have worked on a few small projects using Next.js.
                 </p>
                 <p className="text-base md:text-xl leading-relaxed">
                   Furthermore, I also have experience with Docker to create and manage development environments, as well as deploy applications. I have set up CI/CD pipelines to automate the build, testing, and deployment processes for applications in production. Deploying websites has also been a part of my role, ensuring that applications run smoothly and efficiently after deployment.
