@@ -366,7 +366,7 @@ export default function Home() {
                 <h2 className="text-4xl md:text-6xl font-bold mb-8 md:mb-16 text-center text-[#64FFDA] tracking-tight">
                   Skills & Expertise
                 </h2>
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-12">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 md:gap-12">
                   {[
                     {
                       category: 'Frontend',
@@ -397,6 +397,17 @@ export default function Home() {
                         'Git / GitHub Actions',
                         'Linux / Shell Scripting',
                         'Nginx'
+                      ]
+                    },
+                    {
+                      category: 'Soft Skills',
+                      skills: [
+                        'Communication',
+                        'Teamwork',
+                        'AI Tools Usage',
+                        'Photoshop',
+                        'After Effects',
+                        'CapCut'
                       ]
                     }
                   ].map(({category, skills}, index) => (
@@ -819,7 +830,17 @@ export default function Home() {
               </div>
             </motion.div>
           </ParallaxLayer>
+
+          <ParallaxLayer
+            offset={7}
+            speed={0.2}
+            style={{
+              backgroundColor: '#0A192F'
+            }}
+          >
+          </ParallaxLayer>
         </Parallax>
+
       </div>
     </>
   )
